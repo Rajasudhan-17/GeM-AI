@@ -1,0 +1,66 @@
+[
+  {
+    "code": "REQ-GST-001",
+    "name": "GST Registration Compliance",
+    "document_type": "GST",
+    "rule_code": "GST-001",
+    "weight": 15.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-UDYAM-001",
+    "name": "MSME Udyam Registration",
+    "document_type": "UDYAM",
+    "rule_code": "UDYAM-001",
+    "weight": 10.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-PAN-001",
+    "name": "Income Tax PAN Card",
+    "document_type": "PAN",
+    "rule_code": "PAN-001",
+    "weight": 15.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-EPFO-001",
+    "name": "EPFO Establishment Compliance",
+    "document_type": "EPFO",
+    "rule_code": "EPFO-001",
+    "weight": 10.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-ESIC-001",
+    "name": "ESIC Contribution Compliance",
+    "document_type": "ESIC",
+    "rule_code": "ESIC-001",
+    "weight": 10.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-OEM-001",
+    "name": "OEM Manufacturer Authorization (MAF)",
+    "document_type": "OEM",
+    "rule_code": "OEM-001",
+    "weight": 15.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-DGL-001",
+    "name": "DigiLocker Digital Verification",
+    "document_type": "DIGILOCKER",
+    "rule_code": "DGL-001",
+    "weight": 10.0,
+    "is_mandatory": true
+  },
+  {
+    "code": "REQ-BL-001",
+    "name": "Non-Debarment / Blacklist Clearance",
+    "document_type": "BLACKLIST",
+    "rule_code": "BL-001",
+    "weight": 15.0,
+    "is_mandatory": true
+  }
+]

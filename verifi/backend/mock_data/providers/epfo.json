@@ -1,0 +1,6 @@
+{
+  "BDR-77291": { "establishment_code": "DL/12345/67890", "status": "ACTIVE", "recent_filing_status": "PAID" },
+  "BDR-51064": { "establishment_code": "DL/54321/09876", "status": "ACTIVE", "recent_filing_status": "PAID" },
+  "BDR-90218": { "establishment_code": "DL/99999/00000", "status": "DEFAULTER_INACTIVE", "recent_filing_status": "UNPAID" },
+  "BDR-63357": { "establishment_code": "DL/77889/11223", "status": "ACTIVE", "recent_filing_status": "PAID" }
+}

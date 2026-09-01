@@ -1,0 +1,6 @@
+{
+  "BDR-77291": { "oem_name": "Cisco Systems India Pvt Ltd", "status": "ACTIVE_VALID", "valid_until": "2027-01-14" },
+  "BDR-51064": { "oem_name": "D-Link India Ltd", "status": "ACTIVE_VALID", "valid_until": "2026-12-31" },
+  "BDR-90218": { "oem_name": "HP Enterprise India", "status": "EXPIRED_AND_MISMATCH", "valid_until": "2025-12-31" },
+  "BDR-63357": { "oem_name": "Ubiquiti Networks India", "status": "EXPIRING_SOON", "valid_until": "2026-09-15" }
+}

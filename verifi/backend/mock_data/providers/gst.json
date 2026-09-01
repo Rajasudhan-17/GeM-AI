@@ -1,0 +1,23 @@
+{
+  "BDR-77291": {
+    "gstin": "07AABCS1429B1Z1",
+    "legal_name": "Suresh Enterprises Pvt Ltd",
+    "registration_status": "ACTIVE"
+  },
+  "BDR-51064": {
+    "gstin": "07AACPV9821K1ZP",
+    "legal_name": "Vikram Traders",
+    "registration_status": "ACTIVE",
+    "note": "Authoritative GSTIN is 07AACPV9821K1ZP. Document has 07AACPV9821K1Z2."
+  },
+  "BDR-90218": {
+    "gstin": "07AABCN8822M1ZQ",
+    "legal_name": "NovaTech Systems",
+    "registration_status": "CANCELLED"
+  },
+  "BDR-63357": {
+    "gstin": "07AAACG5541L1Z9",
+    "legal_name": "Green Fields Agro Equipment",
+    "registration_status": "ACTIVE"
+  }
+}

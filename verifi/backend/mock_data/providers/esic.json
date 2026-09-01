@@ -1,0 +1,6 @@
+{
+  "BDR-77291": { "employer_code": "11000123450001001", "status": "COMPLIANT", "missing_months": [] },
+  "BDR-51064": { "employer_code": "11000543210001002", "status": "NON_COMPLIANT_GAPS", "missing_months": ["2026-02", "2026-03", "2026-04"] },
+  "BDR-90218": { "employer_code": "11000999990001003", "status": "DEFAULT_SUSPENDED", "missing_months": ["2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"] },
+  "BDR-63357": { "employer_code": "11000778890001004", "status": "COMPLIANT", "missing_months": [] }
+}

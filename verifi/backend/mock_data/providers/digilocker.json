@@ -1,0 +1,6 @@
+{
+  "BDR-77291": { "status": "AVAILABLE", "is_available": true },
+  "BDR-51064": { "status": "AVAILABLE", "is_available": true },
+  "BDR-90218": { "status": "UNAVAILABLE", "is_available": false, "error": "HTTP 503 Gateway Timeout" },
+  "BDR-63357": { "status": "AVAILABLE", "is_available": true }
+}

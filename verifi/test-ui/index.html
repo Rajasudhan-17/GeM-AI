@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VERIFI – GeM Bid Compliance Verification Engine</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-badge">VERIFI</div>
+        <div class="header-titles">
+          <h1>GeM Bid Compliance Verification Engine</h1>
+          <span class="subtitle">Phase 1 MVP • Deterministic Rule Verification • Zero Database</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div id="backend-status" class="status-indicator offline">
+          <span class="status-dot"></span>
+          <span id="backend-status-text">Connecting...</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tender Information Banner -->
+    <section class="tender-bar">
+      <div class="tender-info">
+        <span class="tender-label">Active Tender:</span>
+        <strong id="tender-number">Loading...</strong> — <span id="tender-title">...</span>
+      </div>
+      <div class="tender-meta">
+        <span class="badge badge-info" id="tender-category">...</span>
+        <span class="tender-val" id="tender-value">...</span>
+      </div>
+    </section>
+
+    <!-- Main Workspace Grid -->
+    <main class="main-grid">
+      <!-- Left Column: Bidders & Selection -->
+      <aside class="left-panel">
+        <div class="panel-card">
+          <div class="panel-header">
+            <h2>Primary MVP Bidders</h2>
+            <span class="count-badge" id="bidders-count">4</span>
+          </div>
+          <div id="bidders-list" class="bidders-list">
+            <!-- Rendered dynamically -->
+            <div class="skeleton-loader">Loading bidders...</div>
+          </div>
+        </div>
+
+        <!-- Selected Bidder Summary & Verification Trigger -->
+        <div class="panel-card" id="bidder-detail-card">
+          <div class="panel-header">
+            <h2>Selected Bidder</h2>
+            <span id="selected-bidder-status-badge" class="badge">PENDING</span>
+          </div>
+          <div class="bidder-summary">
+            <h3 id="detail-bidder-name">Select a bidder</h3>
+            <p id="detail-bidder-id" class="code-text">-</p>
+            
+            <div class="metrics-grid">
+              <div class="metric-box">
+                <span class="metric-label">Compliance Score</span>
+                <span id="detail-score" class="metric-val">--%</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Risk Level</span>
+                <span id="detail-risk" class="metric-val">--</span>
+              </div>
+            </div>
+
+            <button id="btn-run-verification" class="btn btn-primary btn-block">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <span>RUN VERIFICATION PIPELINE</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center & Right Column: Pipeline, Checks, Documents, AI & Decision -->
+      <div class="center-panel">
+        <!-- Verification Pipeline Stage Progress -->
+        <div class="panel-card" id="pipeline-progress-card">
+          <div class="panel-header">
+            <h2>Verification Pipeline Stages</h2>
+            <span id="run-id-tag" class="code-text">Run ID: -</span>
+          </div>
+          <div class="stages-tracker">
+            <div class="stages-bar" id="stages-bar">
+              <div class="stage-item" data-stage="PENDING"><div class="circle">1</div><span>Pending</span></div>
+              <div class="stage-item" data-stage="RUNNING"><div class="circle">2</div><span>Running</span></div>
+              <div class="stage-item" data-stage="OCR"><div class="circle">3</div><span>OCR</span></div>
+              <div class="stage-item" data-stage="EXTRACTING"><div class="circle">4</div><span>Extracting</span></div>
+              <div class="stage-item" data-stage="VERIFYING"><div class="circle">5</div><span>Verifying</span></div>
+              <div class="stage-item" data-stage="RULE_EVALUATION"><div class="circle">6</div><span>Rules</span></div>
+              <div class="stage-item" data-stage="SCORING"><div class="circle">7</div><span>Scoring</span></div>
+              <div class="stage-item" data-stage="AI_ANALYSIS"><div class="circle">8</div><span>AI Analysis</span></div>
+              <div class="stage-item" data-stage="COMPLETED"><div class="circle">✓</div><span>Completed</span></div>
+            </div>
+            <div class="progress-bar-container">
+              <div id="pipeline-progress-bar" class="progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compliance Checks Matrix -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h2>Deterministic Compliance Checks</h2>
+            <div class="checks-legend">
+              <span class="dot-legend dot-pass">PASS</span>
+              <span class="dot-legend dot-fail">FAIL</span>
+              <span class="dot-legend dot-review">REVIEW</span>
+            </div>
+          </div>
+          <div id="checks-container" class="checks-grid">
+            <div class="empty-placeholder">Run verification to evaluate compliance rules against authoritative sources.</div>
+          </div>
+        </div>
+
+        <!-- Documents & Extracted Facts -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h2>Submitted Documents & Extracted Facts</h2>
+          </div>
+          <div id="documents-container" class="docs-list">
+            <div class="empty-placeholder">No documents loaded yet.</div>
+          </div>
+        </div>
+
+        <!-- Bottom Split: AI Assistant and Officer Decision Panel -->
+        <div class="split-row">
+          <!-- AI Assistant Card -->
+          <div class="panel-card flex-1">
+            <div class="panel-header">
+              <h2>GeM AI Compliance Assistant</h2>
+              <span class="badge badge-ai">Grounded Explanation</span>
+            </div>
+            <div class="ai-box">
+              <div id="ai-chat-history" class="chat-history">
+                <div class="chat-message ai-message">
+                  <strong>AI Assistant:</strong> I can explain verification results, source discrepancies, and risk factors grounded strictly on backend check facts.
+                </div>
+              </div>
+              <div class="quick-prompts">
+                <button class="chip-btn" onclick="sendQuickPrompt('Why is GST flagged?')">Why is GST flagged?</button>
+                <button class="chip-btn" onclick="sendQuickPrompt('Why is this bidder low risk?')">Why is this bidder low risk?</button>
+                <button class="chip-btn" onclick="sendQuickPrompt('Explain ESIC compliance status')">Explain ESIC compliance</button>
+                <button class="chip-btn" onclick="sendQuickPrompt('Explain OEM authorization status')">Explain OEM status</button>
+              </div>
+              <div class="chat-input-row">
+                <input type="text" id="ai-input" placeholder="Ask a question about this bid..." onkeydown="if(event.key==='Enter') sendChatMessage()" />
+                <button id="btn-ask-ai" class="btn btn-secondary" onclick="sendChatMessage()">Ask AI</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Officer Decision Panel -->
+          <div class="panel-card flex-1">
+            <div class="panel-header">
+              <h2>Officer Procurement Decision</h2>
+              <button id="btn-generate-reason" class="btn btn-sm btn-outline" onclick="generateDecisionReason()">Auto-Draft Rationale</button>
+            </div>
+            <div class="decision-box">
+              <label for="decision-reason">Justification Reason (Mandatory):</label>
+              <textarea id="decision-reason" rows="4" placeholder="Enter evaluation findings, compliance justification, or click 'Auto-Draft Rationale'..."></textarea>
+              
+              <div class="decision-actions">
+                <button id="btn-accept" class="btn btn-success" onclick="submitDecision('ACCEPTED')">
+                  ✓ ACCEPT BID
+                </button>
+                <button id="btn-reject" class="btn btn-danger" onclick="submitDecision('REJECTED')">
+                  ✗ REJECT BID
+                </button>
+              </div>
+              <div id="decision-result-status" class="decision-status-alert hidden"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHA-256 Chained Audit Trail -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h2>Immutable Audit Trail (SHA-256 Hash Chained)</h2>
+            <button class="btn btn-sm btn-outline" onclick="refreshAuditTrail()">Refresh Audit Log</button>
+          </div>
+          <div id="audit-trail-container" class="audit-list">
+            <div class="empty-placeholder">No audit events generated yet.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Check Details Modal -->
+  <div id="check-modal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeCheckModal()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-check-title">Check Details</h3>
+        <button class="modal-close" onclick="closeCheckModal()">×</button>
+      </div>
+      <div class="modal-body" id="modal-check-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

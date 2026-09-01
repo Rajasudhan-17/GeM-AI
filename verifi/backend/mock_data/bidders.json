@@ -1,0 +1,46 @@
+[
+  {
+    "id": "BDR-77291",
+    "name": "Suresh Enterprises Pvt Ltd",
+    "legal_entity_type": "Private Limited Company",
+    "primary_email": "contact@sureshenterprises.com",
+    "primary_phone": "+91-9810012345",
+    "registered_address": "Plot 42, Okhla Industrial Area Phase-III, New Delhi 110020",
+    "pan": "AABCS1429B",
+    "gstin": "07AABCS1429B1Z1",
+    "udyam_number": "UDYAM-DL-01-0019284"
+  },
+  {
+    "id": "BDR-51064",
+    "name": "Vikram Traders",
+    "legal_entity_type": "Proprietorship",
+    "primary_email": "vikram.traders.delhi@gmail.com",
+    "primary_phone": "+91-9871154321",
+    "registered_address": "Shop 14, Nehru Place Commercial Complex, New Delhi 110019",
+    "pan": "AACPV9821K",
+    "gstin": "07AACPV9821K1ZP",
+    "udyam_number": "UDYAM-DL-02-0048192"
+  },
+  {
+    "id": "BDR-90218",
+    "name": "NovaTech Systems",
+    "legal_entity_type": "Private Limited Company",
+    "primary_email": "admin@novatechsystems.in",
+    "primary_phone": "+91-9999088218",
+    "registered_address": "Unit 8, Tech Park Sector 62, Noida 201301",
+    "pan": "AABCN8822M",
+    "gstin": "07AABCN8822M1ZQ",
+    "udyam_number": ""
+  },
+  {
+    "id": "BDR-63357",
+    "name": "Green Fields Agro Equipment",
+    "legal_entity_type": "Partnership Firm",
+    "primary_email": "sales@greenfieldsagro.co.in",
+    "primary_phone": "+91-9811263357",
+    "registered_address": "Industrial Area, Bawana Phase-1, Delhi 110039",
+    "pan": "AAACG5541L",
+    "gstin": "07AAACG5541L1Z9",
+    "udyam_number": "UDYAM-DL-03-0091823"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "BDR-77291": { "is_blacklisted": false, "status": "CLEAR" },
+  "BDR-51064": { "is_blacklisted": false, "status": "CLEAR" },
+  "BDR-90218": {
+    "is_blacklisted": true,
+    "status": "DEBARRED",
+    "debarment_reason": "Default on delivery in tender GEM/2025/B/1109482 and non-response to show-cause notice.",
+    "debarred_by": "GeM Incident Management Cell"
+  },
+  "BDR-63357": { "is_blacklisted": false, "status": "CLEAR" }
+}

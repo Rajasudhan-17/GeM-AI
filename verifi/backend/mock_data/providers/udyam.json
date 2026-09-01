@@ -1,0 +1,23 @@
+{
+  "BDR-77291": {
+    "udyam_number": "UDYAM-DL-01-0019284",
+    "enterprise_name": "Suresh Enterprises Pvt Ltd",
+    "enterprise_type": "SMALL",
+    "registration_status": "ACTIVE"
+  },
+  "BDR-51064": {
+    "udyam_number": "UDYAM-DL-02-0048192",
+    "enterprise_name": "Vikram Traders",
+    "enterprise_type": "MICRO",
+    "registration_status": "ACTIVE"
+  },
+  "BDR-90218": {
+    "registration_status": "NOT_REGISTERED"
+  },
+  "BDR-63357": {
+    "udyam_number": "UDYAM-DL-03-0091823",
+    "enterprise_name": "Green Fields Agro Equipment",
+    "enterprise_type": "SMALL",
+    "registration_status": "ACTIVE"
+  }
+}
